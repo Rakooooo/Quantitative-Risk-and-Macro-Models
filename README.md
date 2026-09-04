@@ -20,8 +20,7 @@ Python implementation of derivative pricing engines, econometric volatility mode
 * **Live Market Integration**: Pulls nearest-expiry at-the-money option chains via `yfinance`, with built-in bid-ask midpoint fallback for illiquid strikes.
 
 ### 2. Discrete Delta-Hedging Tracking Error ("Gamma bleed")
-* **Self-Financing Replication:** Seeds the replicating portfolio with the option's actual traded premium ($\Pi_0 = \text{option\_price}$), isolating pure discretization tracking error from capital-bias artifacts.
-* **Gamma Explosion ($T \to 0$)**: Simulates geometric Brownian motion paths under the risk-neutral measure to quantify convexity losses during discrete rebalancing intervals.
+* **Self-Financing Replication:** Seeds the replicating portfolio with the option's actual traded premium ($\Pi_0 = \text{option\_price}$), isolating pure discretization tracking error from capital-bias artifacts.* **Gamma Explosion ($T \to 0$)**: Simulates geometric Brownian motion paths under the risk-neutral measure to quantify convexity losses during discrete rebalancing intervals.
 
 ### 3. Execution Speed Benchmark
 Delta computation across a paths $\times$ steps grid, measured on local hardware via `python benchmark.py`:
