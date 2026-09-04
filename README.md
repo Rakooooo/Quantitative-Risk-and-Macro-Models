@@ -16,7 +16,7 @@ Python implementation of derivative pricing engines, econometric volatility mode
 ## 🚀 Module Highlights: Derivatives Pricing & Hedging Engine
 
 ### 1. Vectorized Analytical Solver & Greeks
-* **Broadcasting Engine**: Computes closed-form Black-Scholes prices and full analytical Greeks ($\Delta, \Gamma, \nu, \Theta, \rho$) in sub-millisecond execution using NumPy vectorization.
+* **Broadcasting Engine**: Computes closed-form Black-Scholes prices and full analytical Greeks ($\Delta, \Gamma, \nu, \Theta, \rho$) using fully vectorized NumPy broadcasting (single-digit milliseconds at 1,000+ simulated paths — see benchmark below).
 * **Implied Volatility Extraction**: Implements a robust Newton-Raphson solver bounded via `np.clip` to prevent negative volatility divergence when processing live market quotes.
 * **Live Market Integration**: Pulls nearest-expiry at-the-money option chains via `yfinance`, with built-in bid-ask midpoint fallback for illiquid strikes.
 
@@ -40,7 +40,7 @@ Numba delivers a 1.4x to 2.9x speedup over vectorized NumPy, and up to 43x over 
 ## 🛠️ Quick Start
 
 ```bash
-git clone [https://github.com/Rakooooo/Quantitative-Risk-and-Macro-Models.git](https://github.com/Rakooooo/Quantitative-Risk-and-Macro-Models.git)
+git clone https://github.com/Rakooooo/Quantitative-Risk-and-Macro-Models.git
 cd Quantitative-Risk-and-Macro-Models/01_Derivatives_Pricing
 pip install -r requirements.txt
 python nvda_options_engine.py
